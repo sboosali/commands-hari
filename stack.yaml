@@ -1,7 +1,36 @@
-resolver: lts-5.5
+resolver: lts-5.17
+
+# expected directory structure:
+#
+# commands/commands-hari/
+# commands/commands-core/
+# workflow/workflow-osx/
+# derive-monoid/
+# s-expression/
+
+# these will all go on hackage, once stable
 
 packages:
 - .
+- ../commands-core
 
-extra-deps: []
+- ../../workflow/workflow-types
+- ../../workflow/workflow-pure
+- ../../workflow/workflow-osx
 
+- ../../NSSpeechRecognizer
+- ../../derive-monoid
+- ../../s-expression
+
+extra-deps:
+- language-python-0.5.2
+
+- commands-core-0.0.0
+
+- NSSpeechRecognizer-0.0.0
+
+- workflow-types-0.0.1
+- workflow-osx-0.0.1
+
+- derive-monoid-0.0.0
+- s-expression-0.0.0
