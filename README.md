@@ -1,10 +1,19 @@
 # commands-hari
 
-instructions:
+## Installation:
 
-* download stack
+* install `stack` from
+http://docs.haskellstack.org/en/stable/install_and_upgrade/#mac-os-x
+* `git clone https://github.com/sboosali/commands-hari`
+* `cd commands-hari`
+* `stack build`
+* `stack exec -- commands-hari-server`
 
-dependencies:
+## Usage:
+
+Edit the grammars/actions, and reboot the server.
+
+## Dependencies:
 
 * `NSSpeechRecognizer`, a "command-and-control" grammar
 (i.e. only matches a set of phrases).

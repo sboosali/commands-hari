@@ -35,7 +35,7 @@ source-repository head
 library
  hs-source-dirs:      sources
  default-language:    Haskell2010
- ghc-options:       
+ ghc-options:
   -Wall
   -fwarn-incomplete-uni-patterns
   -fwarn-incomplete-record-updates
@@ -43,13 +43,13 @@ library
   -fno-warn-unticked-promoted-constructors
  default-extensions: AutoDeriveTypeable DeriveDataTypeable DeriveGeneric
                      DeriveFunctor DeriveFoldable DeriveTraversable
-                     LambdaCase EmptyCase TypeOperators PostfixOperators 
+                     LambdaCase EmptyCase TypeOperators PostfixOperators
                      ViewPatterns BangPatterns KindSignatures
                      NamedFieldPuns RecordWildCards TupleSections
-                     MultiWayIf DoAndIfThenElse EmptyDataDecls 
-                     MultiParamTypeClasses FlexibleContexts FlexibleInstances 
+                     MultiWayIf DoAndIfThenElse EmptyDataDecls
+                     MultiParamTypeClasses FlexibleContexts FlexibleInstances
                      TypeFamilies FunctionalDependencies
-                     ScopedTypeVariables StandaloneDeriving 
+                     ScopedTypeVariables StandaloneDeriving
 
  exposed-modules:
   Hari
@@ -70,33 +70,33 @@ library
   -- , stm
   -- , template-haskell
 
-  , deepseq 
+  , deepseq
   , hashable
   , semigroups
   -- ,
   -- , lens
   -- , exceptions
   -- , free
-  -- , bifunctors 
-  -- , profunctors 
+  -- , bifunctors
+  -- , profunctors
   -- , either
-  -- , pipes  
-  -- , formatting 
+  -- , pipes
+  -- , formatting
   -- , servant
   -- , Earley
   -- , split
-  -- , interpolatedstring-perl6 
+  -- , interpolatedstring-perl6
   -- , wl-pprint-text
   -- , text
-  -- , aeson 
+  -- , aeson
   -- , hashable
   -- , unordered-containers
   -- , async
   -- , parallel
 
 
--- $ stack build && stack exec -- commands-hari-example
-executable commands-hari-example
+-- $ stack build && stack exec -- commands-hari-server
+executable commands-hari-server
  hs-source-dirs:      executables
  main-is:             Main.hs
 
@@ -106,56 +106,3 @@ executable commands-hari-example
  build-depends:
     base
   , commands-hari
-
-
--- $ stack test doctest
-test-suite doctest
- hs-source-dirs:      tests
- main-is:             DocTest.hs
- type:                exitcode-stdio-1.0
-
- default-language:    Haskell2010
- ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
-
- build-depends:
-    base
-  , commands-hari
-  , doctest 
-
-
--- $ stack test unittest
-test-suite unittest
- hs-source-dirs:      tests
- main-is:             UnitTest.hs
- type:                exitcode-stdio-1.0
-
- default-language:    Haskell2010
- ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
-
- other-modules:
-  Hari.Test
-
- build-depends:
-    base
-  , commands-hari
-  , hspec ==2.2.*
-  , QuickCheck ==2.8.*
-  -- , tasty
-  -- , tasty-quickcheck
-
-
--- $ stack bench
-benchmark command
- hs-source-dirs:      benchmarks
- main-is:             Bench.hs
- type:                exitcode-stdio-1.0
-
- default-language: Haskell2010
- ghc-options:      -Wall -threaded -rtsopts -with-rtsopts=-N
-
- build-depends:
-    base 
-  , commands-hari
-  , criterion
-  , deepseq 
-
